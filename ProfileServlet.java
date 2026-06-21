@@ -14,27 +14,21 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * ProfileServlet.java
- * Controller - handles all requests
- * CSC584 Individual Assignment 2
- * Uses Java DB (Derby) database
- */
 @WebServlet("/ProfileServlet")
 public class ProfileServlet extends HttpServlet {
 
-    // Java DB (Derby) connection details
+  
     private static final String DB_URL  = "jdbc:derby://localhost:1527/StudentProfilesDB";
     private static final String DB_USER = "app";
     private static final String DB_PASS = "app";
 
-    // Method to get database connection
+    // Method 
     private Connection getConnection() throws Exception {
         Class.forName("org.apache.derby.jdbc.ClientDriver");
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
     }
 
-    // Handle POST requests
+    // POST requests
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,7 +43,7 @@ public class ProfileServlet extends HttpServlet {
         }
     }
 
-    // Handle GET requests
+    // GET requests
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -65,7 +59,7 @@ public class ProfileServlet extends HttpServlet {
         }
     }
 
-    // Save profile to database
+    // Save profile 
     private void saveProfile(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
