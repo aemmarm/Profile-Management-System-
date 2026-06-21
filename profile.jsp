@@ -45,7 +45,7 @@
         <div class="success-badge">✔ <%= message %></div>
 
         <%
-          // Generate avatar initials
+         
           String initials = "?";
           if (profile.getName() != null && !profile.getName().isEmpty()) {
             String[] parts = profile.getName().trim().split("\\s+");
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <!-- Buttons -->
+        
         <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1.5rem;">
           <a href="index.html" class="back-btn">← Add Another Profile</a>
           <a href="ProfileServlet?action=view" class="back-btn">📋 View All Profiles</a>
