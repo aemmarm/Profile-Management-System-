@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Profile — CSC584</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <div class="container">
+    <header class="hero">
+      <div class="badge">CSC584 Assignment 2</div>
+      <h1>Personal Profile</h1>
+      <p class="subtitle">Tell us a little about yourself</p>
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn active">➕ Add Profile</a>
+      <a href="ProfileServlet?action=view" class="nav-btn">📋 View All Profiles</a>
+    </div>
+
+    <form action="ProfileServlet" method="POST" class="profile-form" id="profileForm">
+
+      <input type="hidden" name="action" value="save"/>
+
+      <!-- Student ID -->
+      <div class="form-group">
+        <label for="studentID">
+          <span class="icon">🎓</span> Student ID
+        </label>
+        <input type="text" id="studentID" name="studentID"
+               placeholder="e.g. 2023123456" required />
+      </div>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">
+          <span class="icon">👤</span> Full Name
+        </label>
+        <input type="text" id="name" name="name"
+               placeholder="e.g. Ahmad Faris bin Abdullah" required />
+      </div>
+
+      <!-- Programme -->
+      <div class="form-group">
+        <label for="programme">
+          <span class="icon">📚</span> Programme
+        </label>
+        <select id="programme" name="programme" required>
+          <option value="" disabled selected>Select your programme</option>
+          <option value="CS220 - Bachelor of Computer Science (Hons)">CS220 – Bachelor of Computer Science (Hons)</option>
+          <option value="CS225 - Bachelor of Information Systems (Hons)">CS225 – Bachelor of Information Systems (Hons)</option>
+          <option value="CS230 - Bachelor of Software Engineering (Hons)">CS230 – Bachelor of Software Engineering (Hons)</option>
+          <option value="CS235 - Bachelor of Data Science (Hons)">CS235 – Bachelor of Data Science (Hons)</option>
+          <option value="CS240 - Bachelor of Networking (Hons)">CS240 – Bachelor of Networking (Hons)</option>
+        </select>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">
+          <span class="icon">✉️</span> Email Address
+        </label>
+        <input type="email" id="email" name="email"
+               placeholder="e.g. faris@student.uitm.edu.my" required />
+      </div>
+
+      <!-- Hobbies -->
+      <div class="form-group">
+        <label>
+          <span class="icon">🎯</span> Hobbies
+          <span class="hint">(select all that apply)</span>
+        </label>
+        <div class="checkbox-grid">
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Reading 📖"/> Reading 📖</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Gaming 🎮"/> Gaming 🎮</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Coding 💻"/> Coding 💻</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Music 🎵"/> Music 🎵</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Travelling ✈️"/> Travelling ✈️</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Photography 📷"/> Photography 📷</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Sports ⚽"/> Sports ⚽</label>
+          <label class="check-item"><input type="checkbox" name="hobbies" value="Art & Design 🎨"/> Art & Design 🎨</label>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="form-group">
+        <label for="intro">
+          <span class="icon">📝</span> Short Self-Introduction
+        </label>
+        <textarea id="intro" name="introduction" rows="5"
+          placeholder="Tell us about yourself, your goals, and what makes you unique..."></textarea>
+        <span class="char-counter" id="charCount">0 / 500</span>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span>Submit Profile</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    const textarea = document.getElementById('intro');
+    const counter  = document.getElementById('charCount');
+    textarea.addEventListener('input', () => {
+      const len = textarea.value.length;
+      counter.textContent = len + ' / 500';
+      counter.style.color = len > 450 ? '#e74c3c' : '';
+      if (len > 500) textarea.value = textarea.value.substring(0, 500);
+    });
+
+    document.querySelectorAll('.form-group').forEach((el, i) => {
+      el.style.animationDelay = (i * 0.08) + 's';
+      el.classList.add('animate-in');
+    });
+  </script>
+</body>
+</html>
