@@ -27,7 +27,7 @@
       <p class="subtitle">Here's your profile summary</p>
     </header>
 
-    <!-- Navigation -->
+    
     <div class="nav-links">
       <a href="index.html" class="nav-btn">➕ Add Profile</a>
       <a href="ProfileServlet?action=view" class="nav-btn">📋 View All Profiles</a>
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <!-- Info Grid -->
+        
         <div class="info-grid">
           <div class="info-item">
             <div class="label">🎓 Student ID</div>
@@ -85,13 +85,13 @@
           </div>
         </div>
 
-        <!-- Programme -->
+    
         <div class="info-full">
           <div class="label">📚 Programme</div>
           <div class="value"><%= profile.getProgramme() %></div>
         </div>
 
-        <!-- Hobbies -->
+        
         <div class="info-full">
           <div class="label">🎯 Hobbies</div>
           <div class="value">
@@ -110,7 +110,7 @@
           </div>
         </div>
 
-        <!-- Introduction -->
+       
         <div class="info-full">
           <div class="label">📝 Self Introduction</div>
           <div class="value" style="white-space:pre-wrap;">
