@@ -31,3 +31,12 @@ Uses Java DB (Derby) database built inside NetBeans.
 - Model: ProfileBean.java
 - View: index.html, profile.jsp, viewProfiles.jsp
 - Controller: ProfileServlet.java
+
+## Screenshot of The System
+Add Profile Page
+<img width="1763" height="1499" alt="image" src="https://github.com/user-attachments/assets/a8387ea4-eff4-48f2-a9ef-4d0ad278bfe9" />
+View Profile
+<img width="1763" height="870" alt="image" src="https://github.com/user-attachments/assets/8948fbb5-aea0-45b1-90cd-ecbebc3d0436" />
+
+
+
