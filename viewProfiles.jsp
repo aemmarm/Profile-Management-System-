@@ -28,7 +28,7 @@
       <p class="subtitle">List of all registered student profiles</p>
     </header>
 
-    <!-- Navigation -->
+    
     <div class="nav-links">
       <a href="index.html" class="nav-btn">➕ Add Profile</a>
       <a href="ProfileServlet?action=view" class="nav-btn active">📋 View All Profiles</a>
@@ -39,7 +39,7 @@
       <h2>Student Profiles</h2>
       <p>All registered profiles in the database</p>
 
-      <!-- Search Box -->
+      
       <form action="ProfileServlet" method="GET">
         <input type="hidden" name="action" value="search"/>
         <div class="search-box">
@@ -51,12 +51,12 @@
         </div>
       </form>
 
-      <!-- Error message -->
+      
       <% if (error != null) { %>
         <p style="color:#ef4444; margin-bottom:1rem;">❌ <%= error %></p>
       <% } %>
 
-      <!-- Search result info -->
+      
       <% if (keyword != null && !keyword.isEmpty()) { %>
         <div class="alert-info">
           🔍 Results for: <strong>"<%= keyword %>"</strong>
@@ -64,7 +64,7 @@
         </div>
       <% } %>
 
-      <!-- Profile Table -->
+      
       <% if (profileList != null && profileList.size() > 0) { %>
 
         <div style="overflow-x:auto;">
